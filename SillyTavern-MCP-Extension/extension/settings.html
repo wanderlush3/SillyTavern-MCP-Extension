@@ -1,0 +1,84 @@
+<div class="mcp-extension-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>MCP Extension</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <div class="mcp-extension-settings-content">
+                <!-- Server URL -->
+                <div class="mcp-setting-group">
+                    <h4>MCP Server Connection</h4>
+                    <div class="mcp-setting">
+                        <label for="mcp_server_url">Server URL:</label>
+                        <input type="text" id="mcp_server_url" class="text_pole" value=""
+                            placeholder="https://example.com/mcp or ws://localhost:5005" />
+                    </div>
+                    <small>Supports WebSocket (ws://, wss://) and HTTP/SSE (http://, https://) URLs</small>
+                </div>
+
+                <!-- Logging Settings -->
+                <div class="mcp-setting-group">
+                    <h4>Logging</h4>
+                    <div class="mcp-setting">
+                        <label for="mcp_log_level">Log Level:</label>
+                        <select id="mcp_log_level" class="text_pole">
+                            <option value="debug">Debug</option>
+                            <option value="info" selected>Info</option>
+                            <option value="warn">Warning</option>
+                            <option value="error">Error</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Connection Status -->
+                <div class="mcp-setting-group">
+                    <h4>Status</h4>
+                    <div class="mcp-status-panel">
+                        <div class="mcp-status-item">
+                            <span>Connection:</span>
+                            <span id="mcp_ws_status" class="mcp-status-indicator">Disconnected</span>
+                        </div>
+                        <div id="mcp_ws_detail" class="mcp-status-detail" style="display:none;"></div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="mcp-setting-group">
+                    <div class="mcp-tools-header">
+                        <h4>Registered Tools <span id="mcp_tools_count"></span></h4>
+                        <button id="mcp_list_tools" class="menu_button menu_button_icon">
+                            <i class="fa-solid fa-rotate"></i>
+                            Refresh
+                        </button>
+                    </div>
+                    <div id="mcp_tools_list" class="mcp-tools-list">
+                        <div class="mcp-no-tools">Click Refresh to fetch tools from the server</div>
+                    </div>
+                </div>
+
+                <!-- Tool Executions -->
+                <div class="mcp-setting-group">
+                    <h4>Tool Executions</h4>
+                    <div id="mcp_executions_list" class="mcp-executions-list">
+                        <div class="mcp-no-executions">No active executions</div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="mcp-setting-group">
+                    <div class="mcp-actions">
+                        <button id="mcp_connect" class="menu_button">
+                            <i class="fa-solid fa-plug"></i>
+                            Connect
+                        </button>
+                        <button id="mcp_disconnect" class="menu_button">
+                            <i class="fa-solid fa-plug-circle-xmark"></i>
+                            Disconnect
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
